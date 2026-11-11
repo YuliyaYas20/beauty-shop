@@ -21,6 +21,15 @@ app.get('/items', (req, res) => {
     });
 });
 
+
+app.get('/health', (req, res) => {
+    res.json({
+        status: 'ok',
+        service: 'Beauty Shop'
+    });
+});
+
+
 app.listen(PORT, () => {
     console.log(`Сервер запущено: http://localhost:${PORT}`);
 });
