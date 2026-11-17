@@ -1,8 +1,10 @@
+
 openapi: 3.0.3
 info:
   title: Beauty Shop Catalog API
   version: 1.0.0
   description: REST API для управління каталогом товарів (Практична робота №4).
+
 servers:
   - url: http://localhost:3000
     description: Локальний сервер розробки
@@ -75,10 +77,11 @@ paths:
       - name: id
         in: path
         required: true
-        description: Унікальний ідентифікатор товару
+        description: Унікальний числовий ідентифікатор товару
         schema:
-          type: string
-          example: "prod-1"
+          type: integer
+          minimum: 1
+          example: 1
 
     get:
       tags:
@@ -219,8 +222,9 @@ components:
         - stockQuantity
       properties:
         id:
-          type: string
-          example: "prod-1"
+          type: integer
+          minimum: 1
+          example: 1
         name:
           type: string
           example: "Зволожувальний крем для обличчя"
@@ -258,15 +262,18 @@ components:
           example: "ValidationError"
         code:
           type: string
-          example: "INVALID_INPUT"
+          example: "INVALID_PRODUCT_DATA"
         details:
           type: array
           items:
             type: object
+            required:
+              - field
+              - message
             properties:
               field:
                 type: string
                 example: "price"
               message:
                 type: string
-                example: "Ціна не може бути від'ємною"
+                example: "Price must be a non-negative number"

@@ -1,30 +1,25 @@
 const express = require("express");
-const db = require("./database");
+const productRoutes = require("./api/productRoutes");
 
 const app = express();
 const PORT = 3000;
 
+// Дозволяємо серверу приймати JSON
+app.use(express.json());
+
+// Підключаємо файли сайту
 app.use(express.static("public"));
 
-app.get("/items", (req, res) => {
-  db.all("SELECT * FROM items", [], (err, rows) => {
-    if (err) {
-      return res.status(500).json({
-        error: "Помилка отримання товарів",
-      });
-    }
+// Підключаємо маршрути товарів
+app.use("/items", productRoutes);
 
-    res.json(rows);
-  });
-});
-
+// Перевірка роботи сервера
 app.get("/health", (req, res) => {
-  res.json({
-    status: "ok",
-    service: "Beauty Shop",
-  });
+    res.status(200).json({
+        status: "ok"
+    });
 });
 
 app.listen(PORT, () => {
-  console.log(`Сервер запущено: http://localhost:${PORT}`);
+    console.log(`Сервер запущено: http://localhost:${PORT}`);
 });
