@@ -5,6 +5,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Beauty Shop — Магазин косметики</title>
     <link rel="stylesheet" href="style.css" />
+    <style>
+      .degraded-banner {
+        display: none;
+        background-color: #ffdddd;
+        color: #a10000;
+        border: 1px solid #a10000;
+        padding: 12px;
+        margin-bottom: 16px;
+        border-radius: 6px;
+        font-weight: bold;
+      }
+      .form-group {
+        margin: 15px 0;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+      .form-group input {
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+      }
+      button:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+      }
+      .log-output {
+        background: #f4f4f4;
+        padding: 10px;
+        margin-top: 15px;
+        border-radius: 6px;
+        font-size: 12px;
+        white-space: pre-wrap;
+        max-height: 200px;
+        overflow-y: auto;
+      }
+    </style>
   </head>
   <body>
     <div class="container">
@@ -14,11 +51,44 @@
       </header>
 
       <main>
-        <button id="loadBtn" class="btn">Завантажити товари</button>
+        <!-- Банер Degraded Mode -->
+        <div id="degraded-banner" class="degraded-banner">
+          ⚠️ Сервіс тимчасово перевантажено або недоступний. Кнопки заблоковано
+          на кілька секунд...
+        </div>
+
+        <!-- Форма для тестування ідемпотентного POST -->
+        <div class="form-group">
+          <input
+            type="text"
+            id="item-name"
+            placeholder="Назва товару"
+            value="Зволожувальний крем"
+          />
+          <input type="number" id="item-price" placeholder="Ціна" value="650" />
+          <input
+            type="number"
+            id="item-qty"
+            placeholder="Кількість"
+            value="10"
+          />
+          <button id="create-btn" class="btn" type="button">
+            Додати товар (POST)
+          </button>
+          <button id="double-click-btn" class="btn" type="button">
+            Тест подвійного кліку (2x POST)
+          </button>
+        </div>
+
+        <button id="loadBtn" class="btn" type="button">
+          Завантажити товари
+        </button>
         <div id="loader" class="loader" style="display: none">
           Завантаження...
         </div>
         <ul id="itemsList" class="items-list"></ul>
+
+        <pre id="log-output" class="log-output"></pre>
       </main>
     </div>
 
