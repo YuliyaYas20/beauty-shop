@@ -69,3 +69,8 @@ Beauty Shop — вебзастосунок онлайн-магазину кос�
 Для автоматичної перевірки та збірки Docker-образу фронтенду налаштовано пайплайн у файлі `.github/workflows/ci.yml`. При кожному `push` або `pull_request` у гілку `main` (якщо змінювалися файли у `public/`) автоматично збирається образ `beauty-shop-web` та зберігається як артефакт `beauty-shop-web-image`.
 
 ![Результат виконання GitHub Actions](docs/lab7.png)
+
+## Практична робота №8 (Observability)
+
+- **Звіт по роботі:** [docs/lab8-observability.md](docs/lab8-observability.md)
+- **JSON-конфігурація дашборду:** [docs/my-demo-red-dashboard.json](docs/my-demo-red-dashboard.json)
