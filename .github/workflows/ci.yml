@@ -1,0 +1,42 @@
+name: Frontend CI
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "public/**"
+      - ".github/workflows/ci.yml"
+  pull_request:
+    branches: [main]
+    paths:
+      - "public/**"
+      - ".github/workflows/ci.yml"
+
+jobs:
+  build-frontend:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Build Docker image
+        uses: docker/build-push-action@v6
+        with:
+          context: ./public
+          file: ./public/Dockerfile
+          push: false
+          load: true
+          tags: beauty-shop-web:${{ github.sha }}
+
+      - name: Save Docker image as artifact
+        run: docker save beauty-shop-web:${{ github.sha }} -o beauty-shop-web.tar
+
+      - name: Upload Docker image artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: beauty-shop-web-image
+          path: beauty-shop-web.tar
