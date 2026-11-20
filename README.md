@@ -1,5 +1,7 @@
 # Beauty Shop
 
+![Frontend CI](https://github.com/ritahvisuk-boop/beauty-shop/actions/workflows/ci.yml/badge.svg)
+
 Навчальний командний проєкт з дисципліни
 «Web-дизайн та Web-програмування».
 
@@ -61,3 +63,9 @@ Beauty Shop — вебзастосунок онлайн-магазину кос�
 ### Попередній перегляд у Swagger Editor
 
 ![Swagger Editor Screenshot](docs/api/swagger_screenshot.png)
+
+## CI/CD (GitHub Actions)
+
+Для автоматичної перевірки та збірки Docker-образу фронтенду налаштовано пайплайн у файлі `.github/workflows/ci.yml`. При кожному `push` або `pull_request` у гілку `main` (якщо змінювалися файли у `public/`) автоматично збирається образ `beauty-shop-web` та зберігається як артефакт `beauty-shop-web-image`.
+
+![Результат виконання GitHub Actions](docs/lab7.png)
