@@ -64,16 +64,66 @@ Beauty Shop — вебзастосунок онлайн-магазину кос�
 
 ![Swagger Editor Screenshot](docs/api/swagger_screenshot.png)
 
-## CI/CD (GitHub Actions)
+## Практична робота №7. CI/CD (GitHub Actions)
 
-Для автоматичної перевірки та збірки Docker-образу фронтенду налаштовано пайплайн у файлі `.github/workflows/ci.yml`. При кожному `push` або `pull_request` у гілку `main` (якщо змінювалися файли у `public/`) автоматично збирається образ `beauty-shop-web` та зберігається як артефакт `beauty-shop-web-image`.
+### Мета роботи
+
+Налаштувати автоматичне тестування проєкту Beauty Shop та збірку Docker-образу за допомогою GitHub Actions.
+
+### 1. Налаштування CI/CD
+
+Для автоматизації створено файл `.github/workflows/ci.yml`.
+
+Пайплайн запускається під час `push` у гілку `main` та створення або оновлення Pull Request до `main`, якщо змінюються відповідні файли проєкту: `public/`, `tests/`, `package.json`, `package-lock.json` або конфігурація CI.
+
+### 2. Автоматичне тестування
+
+GitHub Actions виконує такі дії:
+
+1. Завантажує код із GitHub.
+2. Налаштовує Node.js 22 та кешування npm.
+3. Встановлює залежності командою `npm ci`.
+4. Запускає тести командою `npm test`.
+
+У проєкті реалізовано три автоматичні тести:
+
+- Перевірка структури товару.
+- Отримання товару за ID.
+- Перевірка помилки при створенні товару з від'ємною ціною.
+
+Для послідовного виконання тестів використовується команда `node --test --test-concurrency=1`.
+
+### 3. Автоматична збірка Docker-образу
+
+Після успішного проходження тестів GitHub Actions збирає Docker-образ фронтенду на основі `public/Dockerfile`.
+
+Створений образ зберігається у TAR-файлі та завантажується як артефакт `beauty-shop-web-image`.
+
+### 4. Отримання Docker-образу
+
+1. Відкрити вкладку [GitHub Actions](https://github.com/ritahvisuk-boop/beauty-shop/actions).
+2. Вибрати успішний запуск `Frontend CI`.
+3. У розділі **Artifacts** завантажити `beauty-shop-web-image`.
+4. Розпакувати завантажений архів, щоб отримати TAR-файл Docker-образу.
+5. Завантажити образ у Docker командою:
+
+```bash
+docker load -i beauty-shop-web.tar
+```
+
+### 5. Результати роботи
+
+Автоматичне тестування та збірка Docker-образу успішно виконані.
+
+- [GitHub Actions — результати CI/CD](https://github.com/ritahvisuk-boop/beauty-shop/actions/workflows/ci.yml)
+- [Pull Request №15 — налаштування автоматичного тестування](https://github.com/ritahvisuk-boop/beauty-shop/pull/15)
+- [Pull Request №16 — налаштування послідовного запуску тестів](https://github.com/ritahvisuk-boop/beauty-shop/pull/16)
 
 ![Результат виконання GitHub Actions](docs/lab7.png)
 
-## Практична робота №8 (Observability)
+### Висновок
 
-- **Звіт по роботі:** [docs/lab8-observability.md](docs/lab8-observability.md)
-- **JSON-конфігурація дашборду:** [docs/my-demo-red-dashboard.json](docs/my-demo-red-dashboard.json)
+Під час виконання практичної роботи налаштовано CI/CD для Beauty Shop за допомогою GitHub Actions. Реалізовано автоматичне тестування, збірку Docker-образу фронтенду та його збереження як артефакту. Це дозволяє перевіряти зміни в коді та отримувати готовий Docker-образ після успішного виконання пайплайна.
 
 
 
