@@ -13,34 +13,39 @@ db.serialize(() => {
     db.run(`
         CREATE TABLE IF NOT EXISTS items (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
-            name TEXT NOT NULL
+            name TEXT NOT NULL,
+            brand TEXT,
+            category TEXT,
+            price REAL NOT NULL DEFAULT 0,
+            description TEXT,
+            stockQuantity INTEGER NOT NULL DEFAULT 0
         )
     `);
 
     const newColumns = [
-    'brand TEXT',
-    'category TEXT',
-    'price REAL NOT NULL DEFAULT 0',
-    'description TEXT',
-    'stockQuantity INTEGER NOT NULL DEFAULT 0'
-];
+        'brand TEXT',
+        'category TEXT',
+        'price REAL NOT NULL DEFAULT 0',
+        'description TEXT',
+        'stockQuantity INTEGER NOT NULL DEFAULT 0'
+    ];
 
-db.all('PRAGMA table_info(items)', (err, columns) => {
-    if (err) {
-        console.error('Помилка перевірки таблиці:', err.message);
-        return;
-    }
-
-    const existingColumns = columns.map(column => column.name);
-
-    newColumns.forEach(column => {
-        const columnName = column.split(' ')[0];
-
-        if (!existingColumns.includes(columnName)) {
-            db.run(`ALTER TABLE items ADD COLUMN ${column}`);
+    db.all('PRAGMA table_info(items)', (err, columns) => {
+        if (err) {
+            console.error('Помилка перевірки таблиці:', err.message);
+            return;
         }
+
+        const existingColumns = columns.map(column => column.name);
+
+        newColumns.forEach(column => {
+            const columnName = column.split(' ')[0];
+
+            if (!existingColumns.includes(columnName)) {
+                db.run(`ALTER TABLE items ADD COLUMN ${column}`);
+            }
+        });
     });
-});
 
     db.get('SELECT COUNT(*) AS count FROM items', (err, row) => {
         if (err) {
