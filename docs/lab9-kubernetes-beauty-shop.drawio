@@ -1,0 +1,114 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="Сторінка-1" id="7WA1t0J12rABUkyuA9eJ">
+    <mxGraphModel dx="1030" dy="570" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="DcPA2WjDao7twm6squa_-6" edge="1" parent="1" source="DcPA2WjDao7twm6squa_-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;defaultLabelBackgroundColor=page;labelPadding=0 4;" target="DcPA2WjDao7twm6squa_-3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="DcPA2WjDao7twm6squa_-1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="&lt;p&gt;User / Client&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(#000000, var(--ge-light-color, #ffffff));&quot;&gt;Браузер&lt;/span&gt;&lt;/p&gt;" vertex="1">
+          <mxGeometry height="60" width="120" x="70" y="80" as="geometry" />
+        </mxCell>
+        <mxCell id="DcPA2WjDao7twm6squa_-7" edge="1" parent="1" source="DcPA2WjDao7twm6squa_-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;defaultLabelBackgroundColor=page;labelPadding=0 4;" target="DcPA2WjDao7twm6squa_-4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="DcPA2WjDao7twm6squa_-3" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="&lt;p&gt;DNS&lt;/p&gt;&lt;p&gt;shop.example.com&lt;/p&gt;" vertex="1">
+          <mxGeometry height="60" width="120" x="240" y="80" as="geometry" />
+        </mxCell>
+        <mxCell id="DcPA2WjDao7twm6squa_-4" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="&lt;p&gt;Load Balancer&lt;/p&gt;&lt;p&gt;Зовнішній трафік&lt;/p&gt;" vertex="1">
+          <mxGeometry height="60" width="120" x="410" y="80" as="geometry" />
+        </mxCell>
+        <mxCell id="DcPA2WjDao7twm6squa_-9" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#00CCCC;" value="" vertex="1">
+          <mxGeometry height="370" width="660" x="60" y="190" as="geometry" />
+        </mxCell>
+        <mxCell id="DcPA2WjDao7twm6squa_-8" edge="1" parent="1" source="DcPA2WjDao7twm6squa_-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;defaultLabelBackgroundColor=page;labelPadding=0 4;" target="DcPA2WjDao7twm6squa_-5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="DcPA2WjDao7twm6squa_-24" edge="1" parent="1" source="DcPA2WjDao7twm6squa_-5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;defaultLabelBackgroundColor=page;labelPadding=0 4;" target="DcPA2WjDao7twm6squa_-15">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="DcPA2WjDao7twm6squa_-5" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=light-dark(#FFFFFF,#121212);align=center;" value="&lt;p&gt;&lt;br&gt;&lt;/p&gt;" vertex="1">
+          <mxGeometry height="60" width="150" x="545" y="200" as="geometry" />
+        </mxCell>
+        <mxCell id="DcPA2WjDao7twm6squa_-12" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;strong&gt;Kubernetes Cluster&lt;/strong&gt;." vertex="1">
+          <mxGeometry height="30" width="160" x="300" y="200" as="geometry" />
+        </mxCell>
+        <mxCell id="DcPA2WjDao7twm6squa_-13" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="" vertex="1">
+          <mxGeometry height="280" width="600" x="95" y="270" as="geometry" />
+        </mxCell>
+        <mxCell id="DcPA2WjDao7twm6squa_-14" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;b&gt;Namespace: beauty-shop&lt;/b&gt;" vertex="1">
+          <mxGeometry height="30" width="90" x="350" y="270" as="geometry" />
+        </mxCell>
+        <mxCell id="DcPA2WjDao7twm6squa_-15" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="&lt;div&gt;Service: beauty-shop-svc&lt;/div&gt;&lt;div&gt;Type: ClusterIP&lt;/div&gt;&lt;div&gt;Port: 3000&lt;/div&gt;" vertex="1">
+          <mxGeometry height="150" width="175" x="480" y="335" as="geometry" />
+        </mxCell>
+        <mxCell id="DcPA2WjDao7twm6squa_-17" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="235" width="305" x="105" y="310" as="geometry" />
+        </mxCell>
+        <mxCell id="DcPA2WjDao7twm6squa_-18" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;div&gt;Deployment: beauty-shop&lt;/div&gt;&lt;div&gt;Replicas: 2&lt;/div&gt;" vertex="1">
+          <mxGeometry height="35" width="150" x="175" y="315" as="geometry" />
+        </mxCell>
+        <mxCell id="DcPA2WjDao7twm6squa_-19" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="&lt;div&gt;Pod 1&lt;/div&gt;&lt;div&gt;Container: beauty-shop&lt;/div&gt;&lt;div&gt;Image: beauty-shop:1.0.0&lt;/div&gt;" vertex="1">
+          <mxGeometry height="140" width="135" x="115" y="390" as="geometry" />
+        </mxCell>
+        <mxCell id="DcPA2WjDao7twm6squa_-20" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="&lt;div&gt;Pod 2&lt;/div&gt;&lt;div&gt;Container: beauty-shop&lt;/div&gt;&lt;div&gt;Image: beauty-shop:1.0.0&lt;/div&gt;" vertex="1">
+          <mxGeometry height="140" width="135" x="260" y="390" as="geometry" />
+        </mxCell>
+        <mxCell id="DcPA2WjDao7twm6squa_-21" edge="1" parent="1" source="DcPA2WjDao7twm6squa_-15" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;defaultLabelBackgroundColor=page;labelPadding=0 4;" target="DcPA2WjDao7twm6squa_-19">
+          <mxGeometry relative="1" x="-0.1397" as="geometry">
+            <Array as="points">
+              <mxPoint x="190" y="350" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="DcPA2WjDao7twm6squa_-22" edge="1" parent="1" source="DcPA2WjDao7twm6squa_-15" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;defaultLabelBackgroundColor=page;labelPadding=0 4;" target="DcPA2WjDao7twm6squa_-20">
+          <mxGeometry relative="1" x="0.0634" as="geometry">
+            <Array as="points">
+              <mxPoint x="460" y="401.3" />
+              <mxPoint x="460" y="360" />
+              <mxPoint x="327.5" y="360" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="DcPA2WjDao7twm6squa_-23" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="&lt;div&gt;Worker Node — вузол кластера,&lt;/div&gt;&lt;div&gt;на якому запускаються Pod-и&lt;/div&gt;" vertex="1">
+          <mxGeometry height="60" width="120" x="105" y="200" as="geometry" />
+        </mxCell>
+        <mxCell id="DcPA2WjDao7twm6squa_-26" edge="1" parent="1" source="DcPA2WjDao7twm6squa_-5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;defaultLabelBackgroundColor=page;labelPadding=0 4;" target="DcPA2WjDao7twm6squa_-15">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="DcPA2WjDao7twm6squa_-30" edge="1" parent="1" source="DcPA2WjDao7twm6squa_-27" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;defaultLabelBackgroundColor=page;labelPadding=0 4;" target="DcPA2WjDao7twm6squa_-28">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="DcPA2WjDao7twm6squa_-27" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="&lt;div&gt;GitHub Repository&lt;/div&gt;&lt;div&gt;ritahvisuk-boop/beauty-shop&lt;/div&gt;" vertex="1">
+          <mxGeometry height="100" width="110" x="810" y="190" as="geometry" />
+        </mxCell>
+        <mxCell id="DcPA2WjDao7twm6squa_-32" edge="1" parent="1" source="DcPA2WjDao7twm6squa_-28" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;defaultLabelBackgroundColor=page;labelPadding=0 4;" target="DcPA2WjDao7twm6squa_-31">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="DcPA2WjDao7twm6squa_-28" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="&lt;div&gt;GitHub Actions (CI/CD)&lt;/div&gt;&lt;div&gt;Git push → Build image&lt;/div&gt;&lt;div&gt;Push to GHCR&lt;/div&gt;" vertex="1">
+          <mxGeometry height="100" width="110" x="810" y="315" as="geometry" />
+        </mxCell>
+        <mxCell id="DcPA2WjDao7twm6squa_-31" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="&lt;div&gt;Container Registry (GHCR)&lt;/div&gt;&lt;div&gt;ghcr.io/ritahvisuk-boop/beauty-shop:1.0.0&lt;/div&gt;" vertex="1">
+          <mxGeometry height="100" width="110" x="810" y="440" as="geometry" />
+        </mxCell>
+        <mxCell id="DcPA2WjDao7twm6squa_-33" edge="1" parent="1" source="DcPA2WjDao7twm6squa_-31" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;defaultLabelBackgroundColor=page;labelPadding=0 4;entryX=0.994;entryY=0.881;entryDx=0;entryDy=0;entryPerimeter=0;" target="DcPA2WjDao7twm6squa_-17">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="690" y="517.04" />
+              <mxPoint x="690" y="517.04" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="DcPA2WjDao7twm6squa_-34" connectable="0" parent="DcPA2WjDao7twm6squa_-33" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];inheritText=1;defaultLabelBackgroundColor=page;labelPadding=0 4;" value="Pull Docker image" vertex="1">
+          <mxGeometry relative="1" x="0.0019" y="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="DcPA2WjDao7twm6squa_-35" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;div&gt;Ingress&lt;/div&gt;&lt;div&gt;Host: shop.example.com&lt;/div&gt;&lt;div&gt;Path: /&lt;/div&gt;&lt;div&gt;To: beauty-shop-svc&lt;/div&gt;" vertex="1">
+          <mxGeometry height="60" width="175" x="532.5" y="200" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
