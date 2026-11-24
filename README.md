@@ -125,8 +125,6 @@ docker load -i beauty-shop-web.tar
 
 Під час виконання практичної роботи налаштовано CI/CD для Beauty Shop за допомогою GitHub Actions. Реалізовано автоматичне тестування, збірку Docker-образу фронтенду та його збереження як артефакту. Це дозволяє перевіряти зміни в коді та отримувати готовий Docker-образ після успішного виконання пайплайна.
 
-
-
 ## Практична робота №6. Контейнеризація застосунку за допомогою Docker
 
 ### Мета роботи
@@ -197,7 +195,7 @@ docker logs beauty-shop-container
 Ендпоінт `/health` повертає:
 
 ```json
-{"status":"ok"}
+{ "status": "ok" }
 ```
 
 Ендпоінт `/items` повертає список товарів із бази даних SQLite.
@@ -236,3 +234,8 @@ docker rm beauty-shop-container
 ### Висновок
 
 Під час виконання практичної роботи отримано навички роботи з Docker, створення Dockerfile та .dockerignore, збірки образів і запуску контейнерів. Контейнеризація дозволяє запускати застосунок в ізольованому середовищі з необхідними залежностями та спрощує його розгортання на інших комп'ютерах.
+
+## Практична робота №9: Теоретична схема Kubernetes-додатку
+
+- Документація та опис архітектури: [docs/lab9-kubernetes.md](docs/lab9-kubernetes.md)
+- Архітектурна схема: [docs/lab9-kubernetes-beauty-shop.png](docs/lab9-kubernetes-beauty-shop.png) (вихідний файл: [docs/lab9-kubernetes-beauty-shop.drawio](docs/lab9-kubernetes-beauty-shop.drawio))
